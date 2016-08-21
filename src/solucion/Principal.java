@@ -41,6 +41,7 @@ public class Principal extends javax.swing.JFrame {
         txtresultadodos = new javax.swing.JTextField();
         txtresultadotres = new javax.swing.JTextField();
         txtresultadouno = new javax.swing.JTextField();
+        cmdborrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,7 +61,7 @@ public class Principal extends javax.swing.JFrame {
                 cmdcalcularActionPerformed(evt);
             }
         });
-        getContentPane().add(cmdcalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, -1, -1));
+        getContentPane().add(cmdcalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
 
         jLabel4.setForeground(new java.awt.Color(0, 102, 102));
         jLabel4.setText("PORCENTAJE DE INVERSIONISTAS");
@@ -74,18 +75,44 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel7.setText("%");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 20, -1));
-        getContentPane().add(txtnumerodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 70, 20));
-        getContentPane().add(txtnumerotres, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 70, 20));
-        getContentPane().add(txtnumerouno, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 70, 20));
+
+        txtnumerodos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnumerodosKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtnumerodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 70, 30));
+
+        txtnumerotres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnumerotresKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtnumerotres, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 70, 30));
+
+        txtnumerouno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnumerounoKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtnumerouno, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 70, 30));
 
         txtresultadodos.setEditable(false);
-        getContentPane().add(txtresultadodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 50, 20));
+        getContentPane().add(txtresultadodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 50, 30));
 
         txtresultadotres.setEditable(false);
-        getContentPane().add(txtresultadotres, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 50, 20));
+        getContentPane().add(txtresultadotres, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 50, 30));
 
         txtresultadouno.setEditable(false);
-        getContentPane().add(txtresultadouno, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 50, 20));
+        getContentPane().add(txtresultadouno, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 50, 30));
+
+        cmdborrar.setText("Borrar");
+        cmdborrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdborrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cmdborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,6 +139,49 @@ public class Principal extends javax.swing.JFrame {
      txtresultadotres.setText(restres);
       
     }//GEN-LAST:event_cmdcalcularActionPerformed
+
+    private void txtnumerounoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnumerounoKeyTyped
+       char c=evt.getKeyChar(); 
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+                      
+          } 
+    }//GEN-LAST:event_txtnumerounoKeyTyped
+
+    private void txtnumerodosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnumerodosKeyTyped
+     char c=evt.getKeyChar(); 
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+                      
+          } 
+    }//GEN-LAST:event_txtnumerodosKeyTyped
+
+    private void txtnumerotresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnumerotresKeyTyped
+      char c=evt.getKeyChar(); 
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+                      
+          } 
+    }//GEN-LAST:event_txtnumerotresKeyTyped
+
+    private void cmdborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborrarActionPerformed
+     txtnumerouno.setText("");
+     txtnumerodos.setText("");
+     txtnumerotres.setText("");
+     txtresultadouno.setText("");
+     txtresultadodos.setText("");
+     txtresultadotres.setText("");
+     
+     
+     
+     txtnumerouno.requestFocusInWindow();
+    }//GEN-LAST:event_cmdborrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +219,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdborrar;
     private javax.swing.JButton cmdcalcular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
