@@ -5,6 +5,8 @@
  */
 package solucion;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lenovo
@@ -121,6 +123,17 @@ public class Principal extends javax.swing.JFrame {
       double n1,n2,n3,resultadouno,resultadodos,resultadotres,total;
       String resuno,resdos,restres;
       
+      if(txtnumerouno.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Digite la cantidad invertida por inversionista  uno","Error", JOptionPane.ERROR_MESSAGE);
+         txtnumerouno.requestFocusInWindow();
+     }else if(txtnumerodos.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Digite la cantidad invertida por inversionista  dos","Error", JOptionPane.ERROR_MESSAGE);
+         txtnumerodos.requestFocusInWindow();
+     }else if(txtnumerotres.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(this,"Digite la cantidad invertida por inversionista  tres","Error", JOptionPane.ERROR_MESSAGE);
+         txtnumerotres.requestFocusInWindow();
+     }else{
+      
       n1=Double.parseDouble(txtnumerouno.getText());
       n2=Double.parseDouble(txtnumerodos.getText());
       n3=Double.parseDouble(txtnumerotres.getText());
@@ -137,7 +150,7 @@ public class Principal extends javax.swing.JFrame {
      txtresultadodos.setText(resdos);
      restres = String.valueOf(resultadotres);
      txtresultadotres.setText(restres);
-      
+     }
     }//GEN-LAST:event_cmdcalcularActionPerformed
 
     private void txtnumerounoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnumerounoKeyTyped
